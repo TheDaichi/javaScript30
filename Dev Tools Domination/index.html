@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Console Tricks!</title>
+  </head>
+  <body>
+    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+    <script>
+      const dogs = [
+        { name: 'Snickers', age: 2 },
+        { name: 'hugo', age: 8 },
+      ];
+
+      function makeGreen() {
+        const p = document.querySelector('p');
+        p.style.color = '#BADA55';
+        p.style.fontSize = '50px';
+      }
+
+      // Regular
+      console.log('Helloee');
+
+      // Interpolated
+      console.log('Hi %s', 'John');
+
+      // warning!
+      console.warn('Warning!!');
+
+      // Error :|
+      console.error('Errorrrr');
+
+      // Info
+      console.info('Got there');
+
+      // Testing
+      console.assert(1 === 1, 'Right');
+      console.assert(1 === 2, 'Wrong');
+
+      // clearing
+      console.clear();
+
+      // Viewing DOM Elements
+      const p = document.querySelector('p');
+      console.dir(p);
+
+      // Grouping together
+      dogs.forEach((d) => {
+        console.group(`${d.name}`);
+        console.log(d.name);
+        console.log(d.age);
+        console.groupEnd();
+      });
+
+      // counting
+      console.count('Yep!!!');
+      console.count('Yep!!!');
+      console.count('Yep!!!');
+      console.count('Yep!!!');
+      console.count('Yep!!!');
+      console.count('Yep!!!');
+      console.count('Yep!!!');
+      console.count('Yep!!!');
+      console.count('Yep!!!');
+
+      // timing
+      console.time('Start');
+      for (let i = 0; i < 100; i++) {}
+      console.timeEnd('Start');
+    </script>
+  </body>
+</html>
